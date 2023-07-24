@@ -1,0 +1,132 @@
+@font-face {
+    font-family: Luckiest Guy;
+    src: url('fonts/Luckiest_Guy/LuckiestGuy-Regular.ttf');
+    font-style: normal;
+    font-weight: 300 800;
+  }
+  
+* {
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+html {
+    max-width: 375px;
+    max-height: 715px;
+    min-width: fit-content;
+    margin: auto;
+    width: 50%;
+}
+
+
+.container{
+    background: radial-gradient(85.48% 79.62% at 50% 50%, #75BDFF 0%, #020065 100%);
+
+}
+.banner {
+    width: 100%;
+    height: 77px;
+    background: rgba(0, 21, 131, 1);
+}
+
+.title {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: Luckiest Guy;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 0px;
+    text-align: center;
+    color: rgba(255, 255, 255, 1);
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.wrapper {
+    display: flex;
+}
+
+.wheel {
+    display: flex;
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(180deg, #3496DF 11.29%, #016CB9 94.98%);
+    box-shadow: 1px 5px 4px 0px rgba(27, 55, 159, 1) inset;
+    margin: 15px;
+    border-radius: 10%;
+    align-items: center;
+    flex-direction: column;
+}
+
+.wheel-pointer {
+    width: 11px;
+    height: 22px;
+}
+
+.wheel-image {
+    width: 180px;
+    height: 180px;  
+    border: none; 
+    object-fit: none;
+
+}
+.notification {
+    display: flex;
+    flex-direction: column;
+}
+.button {
+    width: 130px;
+    height: 55px;
+    border: 3px solid;
+    background-image: linear-gradient(327.68deg, #588DD8 -2.66%, #324FA5 80.63%);
+    border: 3px solid;
+    border-image-source: linear-gradient(180deg, #FFCD7E 0%, #E18A00 100%);
+    margin: 15px;
+    border-radius: 10%;
+    color: rgba(250, 194, 105, 1);
+    text-shadow: -1px -1px 0px rgba(180, 110, 0, 1);
+
+
+    font-family: Luckiest Guy;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 1px;
+    text-align: center;
+
+
+}
+
+.winners {
+    width: 345px;
+    height: 326px;
+    background: linear-gradient(180deg, #3598DF 0%, #006BB8 100%);
+    box-shadow: 1px 5px 4px 0px rgba(27, 55, 159, 1) inset;
+    margin: 15px;
+    border-radius: 10%;
+}
+
+.sub-title {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-family: Luckiest Guy;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 0px;
+    text-align: center;
+    color: rgba(255, 255, 255, 1);
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.winners-info {
+    width: 315px;
+    height: 51px;
+    background: linear-gradient(180deg, #62B5F0 0%, #046EBA 100%);
+    box-shadow: 1px 3px 3px 0px rgba(16, 46, 131, 0.5);
+    margin: 15px;
+    border-radius: 5%;
+
+
+
+}
+
