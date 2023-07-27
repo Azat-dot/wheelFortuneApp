@@ -1,12 +1,18 @@
 @font-face {
-    font-family: Luckiest Guy;
+    font-family: Luckiest Guy; 
     src: url('fonts/Luckiest_Guy/LuckiestGuy-Regular.ttf');
     font-style: normal;
     font-weight: 300 800;
   }
+@font-face {
+    font-family: Gotham Pro; 
+    src: url('fonts/Gotham Pro/gothampro.ttf');
+    font-style: normal;
+    font-weight: 400;
+}
   
 * {
-    font-family: sans-serif;
+    font-family: 'Luckiest Guy', Gotham Pro ;
     box-sizing: border-box;
 }
 html {
@@ -40,13 +46,13 @@ html {
     color: rgba(255, 255, 255, 1);
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-
 .wrapper {
     display: flex;
 }
-
 .wheel {
     display: flex;
+    position: relative;
+
     width: 200px;
     height: 200px;
     background: linear-gradient(180deg, #3496DF 11.29%, #016CB9 94.98%);
@@ -58,33 +64,39 @@ html {
 }
 
 .wheel-pointer {
+    position: absolute;
+    margin-top: 3px;
     width: 11px;
     height: 22px;
+    z-index: 10;
 }
 
 .wheel-image {
+    position: absolute;
+    margin-top: 7px;
     width: 180px;
     height: 180px;  
     border: none; 
     object-fit: none;
-
 }
 .notification {
     display: flex;
     flex-direction: column;
 }
-.button {
+.wheel-info {
+    margin: 15px;
+    padding-top: 7px;
     width: 130px;
     height: 55px;
     border: 3px solid;
-    background-image: linear-gradient(327.68deg, #588DD8 -2.66%, #324FA5 80.63%);
-    border: 3px solid;
-    border-image-source: linear-gradient(180deg, #FFCD7E 0%, #E18A00 100%);
-    margin: 15px;
+    background: linear-gradient(327.68deg, #588DD8 -2.66%, #324FA5 80.63%),
+                linear-gradient(180deg, #FFCD7E 0%, #E18A00 100%);
+    /* border-image-source: linear-gradient(180deg, #FFCD7E 0%, #E18A00 100%);     */
+
+
     border-radius: 10%;
     color: rgba(250, 194, 105, 1);
     text-shadow: -1px -1px 0px rgba(180, 110, 0, 1);
-
 
     font-family: Luckiest Guy;
     font-size: 20px;
@@ -92,8 +104,30 @@ html {
     line-height: 20px;
     letter-spacing: 1px;
     text-align: center;
+}
+.button {
+    margin: 15px;
+    padding-top: 7px;
 
+    width: 130px;
+    height: 55px;
+    border: 3px solid;
+    background-image: linear-gradient(327.68deg, #588DD8 -2.66%, #324FA5 80.63%);
+    border: 3px solid;
+    /* border-image-source: linear-gradient(180deg, #FFCD7E 0%, #E18A00 100%); */
+    border-radius: 10%;
+    color: rgba(250, 194, 105, 1);
+    text-shadow: -1px -1px 0px rgba(180, 110, 0, 1);
 
+    background: linear-gradient(241.78deg, #BC0000 27.02%, #8B0000 82.05%),
+                linear-gradient(180deg, #FFCD7E 0%, #E18A00 100%);
+
+    font-family: Luckiest Guy;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 1px;
+    text-align: center;
 }
 
 .winners {
@@ -119,14 +153,57 @@ html {
 }
 
 .winners-info {
+    display: flex;
     width: 315px;
     height: 51px;
     background: linear-gradient(180deg, #62B5F0 0%, #046EBA 100%);
     box-shadow: 1px 3px 3px 0px rgba(16, 46, 131, 0.5);
     margin: 15px;
-    border-radius: 5%;
-
-
+    border-radius: 10px;
+}
+.avatar {
+    display: flex;
+    width: 38px;
+    height: 38px;
+    margin: 6.5px 4.5px 6.5px 6.5px;  
+}
+/* .avatar-image {
+    border-radius: 50%;
+} */
+.user-name {
+    margin: auto;
+    font-family: Gotham Pro;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 13px;
+    text-align: left;
+    color: rgba(255, 255, 255, 1);
+    text-shadow: -1px -1px rgba(0, 0, 0, 0.25);
+}
+.money-totall {
+    margin: auto;
+    font-family: Gotham Pro;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 13px;
+    text-align: left;
+    color: rgba(255, 255, 255, 1);
+    text-shadow: -1px -1px rgba(0, 0, 0, 0.25);
 
 }
+.coins{
+    width: 21px;
+    height: 14px;
+    margin: auto;
+}
 
+.seconds {
+    margin: auto;
+    font-family: Gotham Pro;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 13px;
+    text-align: left;
+    color: rgba(255, 255, 255, 1);
+    text-shadow: -1px -1px rgba(0, 0, 0, 0.25);
+}
