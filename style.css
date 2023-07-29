@@ -25,7 +25,6 @@
 
 .container{
     background: radial-gradient(85.48% 79.62% at 50% 50%, #75BDFF 0%, #020065 100%);
-
 }
 
 .banner {
@@ -50,38 +49,40 @@
     display: flex;
 }
 .wheel {
-    display: flex;
     position: relative;
-
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    align-items: center;
+    box-shadow: 1px 5px 4px 0px rgba(27, 55, 159, 1) inset;
+    border-radius: 10%;
     width: 200px;
     height: 200px;
     background: linear-gradient(180deg, #3496DF 11.29%, #016CB9 94.98%);
-    box-shadow: 1px 5px 4px 0px rgba(27, 55, 159, 1) inset;
-    margin: 15px;
-    border-radius: 10%;
-    align-items: center;
-    flex-direction: column;
 }
 
 .wheel-pointer {
     position: absolute;
+    z-index: 10;
     margin-top: 3px;
     width: 11px;
     height: 22px;
-    z-index: 10;
 }
 
 .wheel-image-wrapper {
+    margin-top: 10px;
     width: 180px;
     height: 180px;
+    background-image: url(./wheel.png);
+    background-size: 114%;
+    background-position: center; 
 }
-
 .wheel-image {
+    object-fit: none;
     margin-top: 7px;
+    border: none; 
     width: 180px;
     height: 180px;  
-    border: none; 
-    object-fit: none;
 }
 .notification {
     display: flex;
@@ -89,143 +90,125 @@
 }
 .wheel-info {
     margin: 15px;
-    padding-top: 7px;
+    border: 3px solid transparent;
+    border-radius: 10px;
     width: 130px;
     height: 55px;
-    border: 3px solid transparent;
-
-
-    border-radius: 10px;
-    color: rgba(250, 194, 105, 1);
-    text-shadow: -1px -1px 0px rgba(180, 110, 0, 1);
-
-    
+    padding-top: 7px;
     background-image: linear-gradient(327.68deg, #588DD8 -2.66%, #324FA5 80.63%),
-                      linear-gradient(180deg, #FFCD7E 0%, #E18A00 100%);
+                        linear-gradient(180deg, #FFCD7E 0%, #E18A00 100%);
     background-clip: padding-box, border-box;
     background-origin: padding-box, border-box;
-
-    font-family: Luckiest Guy;
+    text-shadow: -1px -1px 0px rgba(180, 110, 0, 1);  
     font-size: 20px;
-    font-weight: 400;
     line-height: 20px;
+    font-family: Luckiest Guy;
+    font-weight: 400;
     letter-spacing: 1px;
     text-align: center;
+    color: rgba(250, 194, 105, 1);
+
 }
 .button {
     margin: 15px;
-    padding-top: 7px;
-
-    width: 130px;
-    height: 55px;
-    border: 3px solid;
-    background-image: linear-gradient(327.68deg, #588DD8 -2.66%, #324FA5 80.63%);
     border: 3px solid;
     border-radius: 10px;
-    color: rgba(250, 194, 105, 1);
-    text-shadow: -1px -1px 0px rgba(180, 110, 0, 1);
-
+    width: 130px;
+    height: 55px;
+    padding-top: 7px;
     background-image: linear-gradient(241.78deg, #BC0000 27.02%, #8B0000 82.05%),
                 linear-gradient(180deg, #FFCD7E 0%, #E18A00 100%);
     background-clip: padding-box, border-box;
     background-origin: padding-box, border-box;
-
-    font-family: Luckiest Guy;
     font-size: 20px;
+    font-family: Luckiest Guy;
     font-weight: 400;
     line-height: 20px;
     letter-spacing: 1px;
     text-align: center;
+    color: rgba(250, 194, 105, 1);
 }
-
 .winners {
     margin: 15px;
+    box-shadow: 1px 5px 4px 0px rgba(27, 55, 159, 1) inset;
+    border-radius: 10%;
     width: 345px;
     height: 326px;
     background: linear-gradient(180deg, #3598DF 0%, #006BB8 100%);
-    box-shadow: 1px 5px 4px 0px rgba(27, 55, 159, 1) inset;
-    border-radius: 10%;
 }
 
 .sub-title {
     padding-top: 15px;
     padding-bottom: 15px;
-    font-family: Luckiest Guy;
     font-size: 30px;
     font-weight: 400;
+    font-family: Luckiest Guy;
     line-height: 40px;
     letter-spacing: 0px;
     text-align: center;
-    color: rgba(255, 255, 255, 1);
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: rgba(255, 255, 255, 1);
 }
-
 .winners-info {
     display: flex;
+    margin: 15px;
+    box-shadow: 1px 3px 3px 0px rgba(16, 46, 131, 0.5);
+    border-radius: 10px;
     width: 315px;
     height: 51px;
     background: linear-gradient(180deg, #62B5F0 0%, #046EBA 100%);
-    box-shadow: 1px 3px 3px 0px rgba(16, 46, 131, 0.5);
-    margin: 15px;
-    border-radius: 10px;
 }
 .avatar {
     display: flex;
+    margin: 6.5px 4.5px 6.5px 6.5px;  
     width: 38px;
     height: 38px;
-    margin: 6.5px 4.5px 6.5px 6.5px;  
 }
 /* .avatar-image {
     border-radius: 50%;
 } */
 .user-name {
     margin: auto;
-    font-family:  "Gotham Pro", sans-serif;
     font-size: 14px;
     font-weight: 400;
     line-height: 13px;
+    font-family:  "Gotham Pro", sans-serif;
     text-align: left;
-    color: rgba(255, 255, 255, 1);
     text-shadow: -1px -1px rgba(0, 0, 0, 0.25);
+    color: rgba(255, 255, 255, 1);
 }
 .money-totall {
     margin: auto;
-    font-family:  "Gotham Pro", sans-serif;
     font-size: 14px;
     font-weight: 400;
+    font-family:  "Gotham Pro", sans-serif;
     line-height: 13px;
     text-align: left;
-    color: rgba(255, 255, 255, 1);
     text-shadow: -1px -1px rgba(0, 0, 0, 0.25);
-
+    color: rgba(255, 255, 255, 1);
 }
 .coins{
+    margin: auto;
     width: 21px;
     height: 14px;
-    margin: auto;
 }
-
 .seconds {
     margin: auto;
-    font-family: "Gotham Pro", sans-serif;
     font-size: 14px;
-    font-weight: 400;
     line-height: 13px;
+    font-family: "Gotham Pro", sans-serif;
+    font-weight: 400;
     text-align: left;
-    color: rgba(255, 255, 255, 1);
     text-shadow: -1px -1px rgba(0, 0, 0, 0.25);
+    color: rgba(255, 255, 255, 1);
 }
-
-
 .button:hover {
     opacity: 0.8;
   }
-  
-  .blur {
+.blur {
     animation: blur 10s;
   }
-  
-  @keyframes blur {
+@keyframes blur {
     0% {
       filter: blur(1.5px);
     }
