@@ -1,3 +1,14 @@
+:root {
+    --yellow: rgba(250, 194, 105, 1);
+    --white: rgba(255, 255, 255, 1);
+    --main-font: 'Luckiest Guy', sans-serif ;
+    --second-font: "Gotham Pro", sans-serif;
+    /* font-size: 14px;
+    line-height: 13px;
+    line-height: 40px; */
+
+}
+
 @font-face {
     font-family: Luckiest Guy; 
     src: url('fonts/Luckiest_Guy/LuckiestGuy-Regular.ttf');
@@ -12,7 +23,7 @@
 }
   
 * {
-    font-family: 'Luckiest Guy', sans-serif ;
+    font-family: var(--main-font);
     box-sizing: border-box;
 }
 /*  {
@@ -36,13 +47,13 @@
 .title {
     padding-top: 20px;
     padding-bottom: 20px;
-    font-family: Luckiest Guy;
+    font-family: var(--main-font);
     font-size: 40px;
     font-weight: 400;
     line-height: 40px;
     letter-spacing: 0px;
     text-align: center;
-    color: rgba(255, 255, 255, 1);
+    color: var(--white);
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .wrapper {
@@ -102,11 +113,11 @@
     text-shadow: -1px -1px 0px rgba(180, 110, 0, 1);  
     font-size: 20px;
     line-height: 20px;
-    font-family: Luckiest Guy;
+    font-family: var(--main-font);
     font-weight: 400;
     letter-spacing: 1px;
     text-align: center;
-    color: rgba(250, 194, 105, 1);
+    color: var(--yellow)
 
 }
 .button {
@@ -121,12 +132,12 @@
     background-clip: padding-box, border-box;
     background-origin: padding-box, border-box;
     font-size: 20px;
-    font-family: Luckiest Guy;
+    font-family: var(--main-font);
     font-weight: 400;
     line-height: 20px;
     letter-spacing: 1px;
     text-align: center;
-    color: rgba(250, 194, 105, 1);
+    color: var(--yellow)
 }
 .winners {
     margin: 15px;
@@ -142,12 +153,12 @@
     padding-bottom: 15px;
     font-size: 30px;
     font-weight: 400;
-    font-family: Luckiest Guy;
+    font-family: var(--main-font);
     line-height: 40px;
     letter-spacing: 0px;
     text-align: center;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    color: rgba(255, 255, 255, 1);
+    color: var(--white)
 }
 .winners-info {
     display: flex;
@@ -172,20 +183,20 @@
     font-size: 14px;
     font-weight: 400;
     line-height: 13px;
-    font-family:  "Gotham Pro", sans-serif;
+    font-family: var( --second-font);
     text-align: left;
     text-shadow: -1px -1px rgba(0, 0, 0, 0.25);
-    color: rgba(255, 255, 255, 1);
+    color: var(--white)
 }
 .money-totall {
     margin: auto;
     font-size: 14px;
     font-weight: 400;
-    font-family:  "Gotham Pro", sans-serif;
+    font-family: var( --second-font);
     line-height: 13px;
     text-align: left;
     text-shadow: -1px -1px rgba(0, 0, 0, 0.25);
-    color: rgba(255, 255, 255, 1);
+    color: var(--white)
 }
 .coins{
     margin: auto;
@@ -196,11 +207,11 @@
     margin: auto;
     font-size: 14px;
     line-height: 13px;
-    font-family: "Gotham Pro", sans-serif;
+    font-family: var( --second-font);
     font-weight: 400;
     text-align: left;
     text-shadow: -1px -1px rgba(0, 0, 0, 0.25);
-    color: rgba(255, 255, 255, 1);
+    color: var(--white)
 }
 .button:hover {
     opacity: 0.8;
