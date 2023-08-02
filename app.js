@@ -5,24 +5,21 @@
     const moneyTotal = document.querySelector('.money-totall');
     const backWindow = document.querySelector('.back-window');
     const greatButton = document.querySelector(".congrat-button")
-    const backWindowBalance = document.querySelector(".back-window_money")
+    const backWindowBalance = document.querySelector(".back-window-money")
     let deg = 0;
     let win;
     let balance_number = 0;
 
-    // (balance_number === undefined)
-    //   ? balance_number = 0
-    //   : balance_number = balance_number;
-
+    
     let optionValue = [
         "JACKPOT",
-        "250",
-        "400",
-        "10",
-        "100",
-        "150",
-        "200",
-        "750",
+        250,
+        400,
+        10,
+        100,
+        150,
+        200,
+        750,
         ]
   
     startButton.addEventListener('click', () => {
@@ -38,9 +35,7 @@
       // Apply the blur
       wheel.classList.add('blur');
 
-      // let balance_number = balance.innerText.match(/\d{1,}/);
-      // balance_number = balance_number-50;
-      // balance.innerHTML = "BALANCE <br />"+balance_number;
+   
       setTimeout(()=>backWindow.style.display = 'block', 2000);
     });
   
@@ -66,35 +61,37 @@
 
       switch (true){
         case actualDeg <= 50 && actualDeg >= 5:
-          win = +optionValue[7];
+          win = optionValue[7];
           break;
         case actualDeg > 50 &&  actualDeg < 95:
-          win = +optionValue[6];
+          win = optionValue[6];
           break;
         case actualDeg >= 95 && actualDeg < 140:
-          win = +optionValue[5];
+          win = optionValue[5];
           break;
         case actualDeg >= 140 && actualDeg < 185:
-          win = +optionValue[4];
+          win = optionValue[4];
           break;
         case actualDeg >= 185 && actualDeg < 230:
-          win = +optionValue[3];
+          win = optionValue[3];
           break;
         case actualDeg >= 230 && actualDeg < 275:
-          win = +optionValue[2];
+          win = optionValue[2];
           break;
         case actualDeg >= 275 && actualDeg < 320:
-          win = +optionValue[1];
+          win = optionValue[1];
           break;
         default:
-          win = +optionValue[7];
+          win = 1000
+          jackpot.style.background = "linear-gradient(241.78deg, #BC0000 27.02%, #8B0000 82.05%)",
+                                      "linear-gradient(180deg, #FFCD7E 0%, #E18A00 100%)";
     }
 
         backWindowBalance.innerHTML =  win
         
-        balance_number = +balance_number +(+parseInt(win))-50;
+        balance_number = +balance_number + win - 50;
       
-        balance.innerHTML = "BALANCE " + balance_number
+        balance.innerHTML = "BALANCE <br> " + balance_number
 
         moneyTotal.innerHTML = balance_number
 
