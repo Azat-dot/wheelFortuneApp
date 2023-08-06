@@ -90,10 +90,13 @@
           break;
         default:
           win = 1000
-          jackpot.style.border = "3px solid"
+          jackpot.style.border = "3px solid",
           jackpot.style["border-image-source"] = "linear-gradient(180deg, #FFCD7E 0%, #E18A00 100%)";
           jackpot.style["background-image"] = "linear-gradient(241.78deg, #BC0000 27.02%, #8B0000 82.05%), linear-gradient(180deg, #FFCD7E 0%, #E18A00 100%)";
-          // jackpot.style[box-shadow] = "0";
+        
+          setTimeout(() => jackpot.style["background-image"] = "linear-gradient(327.68deg, #588DD8 -2.66%, #324FA5 80.63%), linear-gradient(180deg, #FFCD7E 0%, #E18A00 100%)", 2000
+          )
+          
 
     }
 
