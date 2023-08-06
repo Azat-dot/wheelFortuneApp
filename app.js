@@ -93,7 +93,7 @@
           jackpot.style.border = "3px solid"
           jackpot.style["border-image-source"] = "linear-gradient(180deg, #FFCD7E 0%, #E18A00 100%)";
           jackpot.style["background-image"] = "linear-gradient(241.78deg, #BC0000 27.02%, #8B0000 82.05%), linear-gradient(180deg, #FFCD7E 0%, #E18A00 100%)";
-
+          // jackpot.style[box-shadow] = "0";
 
     }
 
