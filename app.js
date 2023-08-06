@@ -56,7 +56,7 @@
       greatButton.addEventListener('click', () => {
         backWindow.style.display = 'none'
       })
-
+//only numbers
       balance_number = balance.innerText.match(/\d{1,}/);
 
       switch (true){
