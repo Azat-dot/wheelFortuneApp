@@ -4,8 +4,9 @@
     const jackpot = document.querySelector('.jackpot');
     const moneyTotal = document.querySelector('.money-totall');
     const backWindow = document.querySelector('.back-window');
+    const backTextWindow = document.querySelector('.back-text-window');
     const greatButton = document.querySelector(".congrat-button")
-    const backWindowBalance = document.querySelector(".back-window-money")
+    const backTextWindowBalance = document.querySelector(".back-window-money")
     let deg = 0;
     let win;
     let balance_number = 0;
@@ -36,13 +37,16 @@
       wheel.classList.add('blur');
 
    
-      setTimeout(()=>backWindow.style.display = 'block', 2000);
+      setTimeout(()=>backWindow.style.display = 'block', 1500);
+      setTimeout(()=>backTextWindow.style.display = 'block', 1600);
+
     });
   
     wheel.addEventListener('transitionend', () => {
       // Remove blur
       wheel.classList.remove('blur');
-      backWindow.classList.add('block');
+ 
+
 
       // Enable button when spin is over
       startButton.style.pointerEvents = 'auto';
@@ -55,6 +59,9 @@
 
       greatButton.addEventListener('click', () => {
         backWindow.style.display = 'none'
+      })
+      greatButton.addEventListener('click', () => {
+        backTextWindow.style.display = 'none'
       })
 //only numbers
       balance_number = balance.innerText.match(/\d{1,}/);
@@ -83,11 +90,14 @@
           break;
         default:
           win = 1000
-          jackpot.style.background = "linear-gradient(241.78deg, #BC0000 27.02%, #8B0000 82.05%)",
-                                      "linear-gradient(180deg, #FFCD7E 0%, #E18A00 100%)";
+          jackpot.style.border = "3px solid"
+          jackpot.style["border-image-source"] = "linear-gradient(180deg, #FFCD7E 0%, #E18A00 100%)";
+          jackpot.style["background-image"] = "linear-gradient(241.78deg, #BC0000 27.02%, #8B0000 82.05%), linear-gradient(180deg, #FFCD7E 0%, #E18A00 100%)";
+
+
     }
 
-        backWindowBalance.innerHTML =  win
+        backTextWindowBalance.innerHTML =  win
         
         balance_number = +balance_number + win - 50;
       
