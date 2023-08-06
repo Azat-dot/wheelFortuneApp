@@ -4,7 +4,7 @@
     const jackpot = document.querySelector('.jackpot');
     const moneyTotal = document.querySelector('.money-totall');
     const backWindow = document.querySelector('.back-window');
-    const backTextWindow = document.querySelector('.back-text-window');
+    const backTextWrapper = document.querySelector('.back-text-wrapper');
     const greatButton = document.querySelector(".congrat-button")
     const backTextWindowBalance = document.querySelector(".back-window-money")
     let deg = 0;
@@ -38,7 +38,7 @@
 
    
       setTimeout(()=>backWindow.style.display = 'block', 1500);
-      setTimeout(()=>backTextWindow.style.display = 'block', 1600);
+      setTimeout(()=>backTextWrapper.style.display = 'block', 1600);
 
     });
   
@@ -61,7 +61,7 @@
         backWindow.style.display = 'none'
       })
       greatButton.addEventListener('click', () => {
-        backTextWindow.style.display = 'none'
+        backTextWrapper.style.display = 'none'
       })
 //only numbers
       balance_number = balance.innerText.match(/\d{1,}/);
