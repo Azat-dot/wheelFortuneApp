@@ -1,37 +1,55 @@
-import{win, wheel, startButton, actualDeg, backWindow} from "./circleValue.js"
+import { optionValue } from './constant.js'
 
-const balance = document.querySelector('.balance');
-const moneyTotal = document.querySelector('.money-totall');
-const greatButton = document.querySelector(".congrat-button")
-const backWindowBalance = document.querySelector(".back-window-money")
-
-let balance_number = 0;
-
-wheel.addEventListener('transitionend', () => {
-    // Remove blur
-    wheel.classList.remove('blur');
-    backWindow.classList.add('block');
-
-    // Enable button when spin is over
-    startButton.style.pointerEvents = 'auto';
-    // Need to set transition to none as we want to rotate instantly
-    wheel.style.transition = 'none';
-
+let deg = 0;
+function appearBackWindow(backWindow) {
+    setTimeout(()=>backWindow.style.display = 'block', 1500);
+  }
+  
+  function disappearBackWindow(greatButton, backWindow) {
     greatButton.addEventListener('click', () => {
       backWindow.style.display = 'none'
     })
+  }
+  
+  function rotateWheel(startButton, wheel, appearBackWindow, backWindow, backTextWrapper) {
+  
+    startButton.addEventListener('click', () => {
+      startButton.style.pointerEvents = 'none';
+      deg = Math.floor(5000 + Math.random() * 5000)
+      wheel.style.transition = `all 1s ease-out`;
+      wheel.style.transform = `rotate(${deg}deg)`;
+      wheel.classList.add('blur');
+  
 
-    balance_number = balance.innerText.match(/\d{1,}/);
-
-      backWindowBalance.innerHTML =  win
       
-      balance_number = +balance_number + win - 50;
-    
-      balance.innerHTML = "BALANCE <br> " + balance_number
+      appearBackWindow(backWindow);
+      appearBackWindow(backTextWrapper);
+      
+    });
+  }
+  
+  function getTransitionAndInfo(wheel, startButton, disappearBackWindow, greatButton, backWindow, backTextWrapper, balance_number, balance, getBalance, actualDeg,  optionValue, jackpot, backTextWindowBalance, moneyTotal, win) {
+      wheel.addEventListener('transitionend', () => {
+      wheel.classList.remove('blur');
+      startButton.style.pointerEvents = 'auto';
+      wheel.style.transition = 'none';
+  
+      actualDeg = deg % 360;
+  
+      disappearBackWindow(greatButton, backWindow)
+      disappearBackWindow(greatButton, backTextWrapper)
+  
+        balance_number = balance.innerText.match(/\d{1,}/);
 
-      moneyTotal.innerHTML = balance_number
+        getBalance(actualDeg, optionValue, jackpot, win)
+        win = getBalance(actualDeg, optionValue, jackpot, win)
+        backTextWindowBalance.innerHTML =  win
+        balance_number = +balance_number + win - 50;
+        balance.innerHTML = "BALANCE <br> " + balance_number
+        moneyTotal.innerHTML = balance_number
+  
+      wheel.style.transform = `rotate(${actualDeg}deg)`;
+    });
+  }
 
-
-    // Set the real rotation instantly without animation
-    wheel.style.transform = `rotate(${actualDeg}deg)`;
-  });
+  export {rotateWheel, getTransitionAndInfo, appearBackWindow, disappearBackWindow};
