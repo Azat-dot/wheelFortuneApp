@@ -5,11 +5,11 @@ function appearBackWindow(backWindow) {
     setTimeout(()=>backWindow.style.display = 'block', 1500);
   }
   
-  function disappearBackWindow(greatButton, backWindow) {
-    greatButton.addEventListener('click', () => {
-      backWindow.style.display = 'none'
+function disappearBackWindow(greatButton, backWindow) {
+        greatButton.addEventListener('click', () => {
+    backWindow.style.display = 'none'
     })
-  }
+}
   
   function rotateWheel(startButton, wheel, appearBackWindow, backWindow, backTextWrapper) {
   
@@ -28,7 +28,7 @@ function appearBackWindow(backWindow) {
     });
   }
   
-  function getTransitionAndInfo(wheel, startButton, disappearBackWindow, greatButton, backWindow, backTextWrapper, balance_number, balance, getBalance, actualDeg,  optionValue, jackpot, backTextWindowBalance, moneyTotal, win) {
+function getTransitionAndInfo(wheel, startButton, disappearBackWindow, greatButton, backWindow, backTextWrapper, balance_number, balance, getBalance, actualDeg,  optionValue, jackpot, backTextWindowBalance, moneyTotal, win) {
       wheel.addEventListener('transitionend', () => {
       wheel.classList.remove('blur');
       startButton.style.pointerEvents = 'auto';
