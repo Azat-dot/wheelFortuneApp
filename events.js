@@ -50,6 +50,7 @@ function getTransitionAndInfo(wheel, startButton, disappearBackWindow, greatButt
         
         if(balance_number == 0) {
           postUser()
+          
         }
   
       wheel.style.transform = `rotate(${actualDeg}deg)`;
