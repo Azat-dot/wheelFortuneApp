@@ -3,6 +3,7 @@
    import { optionValue } from './constant.js'
 
 
+
     const wheel = document.querySelector('.wheel-image-wrapper');
     const startButton = document.querySelector('.button');
     const balance = document.querySelector('.balance');

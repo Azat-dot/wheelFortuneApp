@@ -1,10 +1,9 @@
 const URL = "http://localhost:3000/users"
 
-let newName = +prompt("your name ?", " ")
 
 let user = {
-    name: +prompt("your name ?", ""),
-    surname: 'Smith'
+    name: prompt("Please, type your name ?", ""),
+    surname: prompt("Please, type your surname ?", ""),
   };
 
   
@@ -19,7 +18,6 @@ async function postUser() {
   });
   
   let result = await response.json();
-  alert(result.message);
 }
 
 

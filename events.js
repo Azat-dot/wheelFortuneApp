@@ -1,7 +1,5 @@
-import { postUser} from './requests.js'
+import { postUser } from './requests.js'
 
-// console.log("Event.js");
-// postUser()
 let deg = 0;
 function appearBackWindow(backWindow) {
     setTimeout(()=>backWindow.style.display = 'block', 1500);
@@ -49,8 +47,14 @@ function getTransitionAndInfo(wheel, startButton, disappearBackWindow, greatButt
         balance_number = +balance_number + win - 50;
         balance.innerHTML = "BALANCE <br> " + balance_number
         moneyTotal.innerHTML = balance_number
+        
+        if(balance_number == 0) {
+          postUser()
+        }
   
       wheel.style.transform = `rotate(${actualDeg}deg)`;
+      
+
     });
   }
 
