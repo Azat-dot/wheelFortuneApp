@@ -1,5 +1,7 @@
-import { optionValue } from './constant.js'
+import { postUser} from './requests.js'
 
+// console.log("Event.js");
+// postUser()
 let deg = 0;
 function appearBackWindow(backWindow) {
     setTimeout(()=>backWindow.style.display = 'block', 1500);
