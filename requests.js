@@ -1,10 +1,12 @@
 const URL = "http://localhost:3000/users"
 
 
+
 let user = {
-    name: prompt("Please, type your name ?", ""),
-    surname: prompt("Please, type your surname ?", ""),
-  };
+  name: "John",
+  surname: "Smith",
+  balance: 0
+};
 
   
 async function postUser() {
@@ -21,4 +23,12 @@ async function postUser() {
 }
 
 
-export {postUser}
+
+async function getUser() {
+  console.log("post req is working");
+  let response = await fetch(URL)
+  return response.json();
+}
+
+
+export {postUser, user, getUser}

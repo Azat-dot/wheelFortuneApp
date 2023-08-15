@@ -1,4 +1,6 @@
-import { postUser } from './requests.js'
+import { postUser, user, getUser } from './requests.js'
+
+let response = getUser().then(response =>console.log(response))
 
 let deg = 0;
 function appearBackWindow(backWindow) {
@@ -10,8 +12,8 @@ function disappearBackWindow(greatButton, backWindow) {
     backWindow.style.display = 'none'
     })
 }
-  
-  function rotateWheel(startButton, wheel, appearBackWindow, backWindow, backTextWrapper) {
+
+function rotateWheel(startButton, wheel, appearBackWindow, backWindow, backTextWrapper) {
   
     startButton.addEventListener('click', () => {
       startButton.style.pointerEvents = 'none';
@@ -33,11 +35,11 @@ function getTransitionAndInfo(wheel, startButton, disappearBackWindow, greatButt
       wheel.classList.remove('blur');
       startButton.style.pointerEvents = 'auto';
       wheel.style.transition = 'none';
-  
+
+
       actualDeg = deg % 360;
   
-      disappearBackWindow(greatButton, backWindow)
-      disappearBackWindow(greatButton, backTextWrapper)
+      
   
         balance_number = balance.innerText.match(/\d{1,}/);
 
@@ -48,13 +50,17 @@ function getTransitionAndInfo(wheel, startButton, disappearBackWindow, greatButt
         balance.innerHTML = "BALANCE <br> " + balance_number
         moneyTotal.innerHTML = balance_number
         
-        if(balance_number == 0) {
-          postUser()
-          
-        }
+        // let userName = prompt("Please, type your name ?", "");
+        // let surname = prompt("Please, type your surname ?", "");
+        
+        // postUser(user.balance = balance_number, user.name = userName, user.surname = surname)
+
+   
+      disappearBackWindow(greatButton, backWindow)
+      disappearBackWindow(greatButton, backTextWrapper)
   
       wheel.style.transform = `rotate(${actualDeg}deg)`;
-      
+          
 
     });
   }
