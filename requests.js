@@ -1,16 +1,18 @@
-const URL = "http://localhost:3000/users"
-
-
+import { winnersNumber, URL } from './constant.js';
 
 let user = {
-  name: "John",
-  surname: "Smith",
-  balance: 0
+  name: "",
+  surname: "",
+  balance: 0,
+  photoURL: "https://i.pravatar.cc/300"
 };
+
+let players = await getUsers();
+let winners = topPlayers(players, winnersNumber);
+
 
   
 async function postUser() {
-    console.log("Function is working");
   let response = await fetch(URL, {
     method: 'POST',
     headers: {
@@ -19,16 +21,19 @@ async function postUser() {
     body: JSON.stringify(user)
   });
   
-  let result = await response.json();
 }
 
-
-
-async function getUser() {
-  console.log("post req is working");
+async function getUsers() {
   let response = await fetch(URL)
   return response.json();
 }
 
+function topPlayers(players, winnersNumber ) {
+  players.sort( (a, b) => b.balance - a.balance )
 
-export {postUser, user, getUser}
+   return players.slice(0, winnersNumber)
+}
+
+
+
+export {postUser, user, winners}

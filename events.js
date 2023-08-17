@@ -1,6 +1,32 @@
-import { postUser, user, getUser } from './requests.js'
+import { postUser, user, winners } from './requests.js'
 
-let response = getUser().then(response =>console.log(response))
+
+function renderCard (winners) {
+
+  return `
+          <div class="winners-info">
+                    <div class="avatar"> <img src=${winners.photoURL} class="avatar-img" style="border-radius: 50%"></div> 
+                    <div class="user-name">${winners.name} ${winners.surname}</div>
+                    <div class="money-totall">${winners.balance}</div>
+                    <div class="coins"><img src="./coins.png" class="coins-img"></div>
+                    
+           </div>
+  `
+}
+
+function renderWinners(winners) {
+  document.getElementById('winners').innerHTML = ""
+  winners.forEach(winner => {
+      const element = document.createElement('div')
+      element.innerHTML = renderCard(winner)
+      
+      document.getElementById('winners').append(element)
+  })
+}
+
+renderWinners(winners)
+
+
 
 let deg = 0;
 function appearBackWindow(backWindow) {
@@ -38,9 +64,6 @@ function getTransitionAndInfo(wheel, startButton, disappearBackWindow, greatButt
 
 
       actualDeg = deg % 360;
-  
-      
-  
         balance_number = balance.innerText.match(/\d{1,}/);
 
         getBalance(actualDeg, optionValue, jackpot, win)
@@ -65,4 +88,4 @@ function getTransitionAndInfo(wheel, startButton, disappearBackWindow, greatButt
     });
   }
 
-  export {rotateWheel, getTransitionAndInfo, appearBackWindow, disappearBackWindow};
+  export {rotateWheel, getTransitionAndInfo, appearBackWindow, disappearBackWindow, renderWinners};

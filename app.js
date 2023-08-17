@@ -1,4 +1,4 @@
-   import { rotateWheel, getTransitionAndInfo, appearBackWindow, disappearBackWindow } from"./events.js"
+   import { rotateWheel, getTransitionAndInfo, appearBackWindow, disappearBackWindow, renderWinners} from"./events.js"
    import { getBalance} from './getBalance.js'
    import { optionValue } from './constant.js'
 
@@ -21,7 +21,7 @@
 
     rotateWheel(startButton, wheel, appearBackWindow, backWindow, backTextWrapper)
     getTransitionAndInfo(wheel, startButton, disappearBackWindow, greatButton, backWindow, backTextWrapper, balance_number, balance, getBalance, actualDeg, optionValue, jackpot, backTextWindowBalance, moneyTotal, win)
-
+   //  renderWinners()
     
 
 
