@@ -20,7 +20,7 @@
 
 
     rotateWheel(startButton, wheel, appearBackWindow, backWindow, backTextWrapper)
-    getTransitionAndInfo(wheel, startButton, disappearBackWindow, greatButton, backWindow, backTextWrapper, balance_number, balance, getBalance, actualDeg, optionValue, jackpot, backTextWindowBalance, moneyTotal, win)
+    getTransitionAndInfo(wheel, startButton, disappearBackWindow, greatButton, backWindow, backTextWrapper, balance, getBalance, actualDeg, optionValue, jackpot, backTextWindowBalance, moneyTotal)
    //  renderWinners()
     
 

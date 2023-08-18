@@ -1,5 +1,7 @@
-import { postUser, user, winners } from './requests.js'
+import { postUser, userTest, winners } from './requests.js'
+import { User } from './user.js'
 
+let user;
 
 function renderCard (winners) {
 
@@ -56,7 +58,7 @@ function rotateWheel(startButton, wheel, appearBackWindow, backWindow, backTextW
     });
   }
   
-function getTransitionAndInfo(wheel, startButton, disappearBackWindow, greatButton, backWindow, backTextWrapper, balance_number, balance, getBalance, actualDeg,  optionValue, jackpot, backTextWindowBalance, moneyTotal, win) {
+function getTransitionAndInfo(wheel, startButton, disappearBackWindow, greatButton, backWindow, backTextWrapper, balance, getBalance, actualDeg,  optionValue, jackpot, backTextWindowBalance, moneyTotal) {
       wheel.addEventListener('transitionend', () => {
       wheel.classList.remove('blur');
       startButton.style.pointerEvents = 'auto';
@@ -64,28 +66,43 @@ function getTransitionAndInfo(wheel, startButton, disappearBackWindow, greatButt
 
 
       actualDeg = deg % 360;
-        balance_number = balance.innerText.match(/\d{1,}/);
+        let balance_number = balance.innerText.match(/\d{1,}/);// куда надо отправить
 
-        getBalance(actualDeg, optionValue, jackpot, win)
-        win = getBalance(actualDeg, optionValue, jackpot, win)
+        let win = getBalance(actualDeg, optionValue, jackpot) // текуший выйгрыш
         backTextWindowBalance.innerHTML =  win
         balance_number = +balance_number + win - 50;
-        balance.innerHTML = "BALANCE <br> " + balance_number
+
+        balance.innerHTML = "BALANCE <br> " + balance_number// отправка баланса
+
         moneyTotal.innerHTML = balance_number
         
-        // let userName = prompt("Please, type your name ?", "");
-        // let surname = prompt("Please, type your surname ?", "");
-        
-        // postUser(user.balance = balance_number, user.name = userName, user.surname = surname)
-
+        user.balance += balance_number // итоговый баланс
    
       disappearBackWindow(greatButton, backWindow)
       disappearBackWindow(greatButton, backTextWrapper)
   
       wheel.style.transform = `rotate(${actualDeg}deg)`;
-          
 
     });
   }
+
+
+function getUserDate() {
+    let userName = prompt("Please, type your name ?", "");
+    let surname = prompt("Please, type your surname ?", "");
+    
+    user = new User(userName, surname)
+
+}
+
+window.addEventListener("load", async function()  {
+
+    getUserDate()
+})
+
+// postUser(user.balance = balance_number, user.name = userName, user.surname = surname)
+
+
+
 
   export {rotateWheel, getTransitionAndInfo, appearBackWindow, disappearBackWindow, renderWinners};

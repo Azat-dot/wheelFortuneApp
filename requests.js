@@ -1,6 +1,6 @@
 import { winnersNumber, URL } from './constant.js';
 
-let user = {
+let userTest = {
   name: "",
   surname: "",
   balance: 0,
@@ -36,4 +36,4 @@ function topPlayers(players, winnersNumber ) {
 
 
 
-export {postUser, user, winners}
+export {postUser, userTest, winners}

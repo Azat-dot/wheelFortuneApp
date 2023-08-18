@@ -1,5 +1,6 @@
 
-function getBalance(actualDeg, optionValue, jackpot, win)  {
+function getBalance(actualDeg, optionValue, jackpot)  {
+  let win
     switch (true){
    case actualDeg <= 50 && actualDeg >= 5:
      win = optionValue[7];
