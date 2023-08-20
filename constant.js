@@ -1,6 +1,6 @@
 export const URL = "http://localhost:3000/users";
 
-export const optionValue = [
+export const OPTION_VALUE = [
     "JACKPOT",
     250,
     400,
@@ -11,4 +11,6 @@ export const optionValue = [
     750,
     ]
 
-export const winnersNumber = 4
+export const WINNERS_NUMBERS = 4;
+
+export const COST = 50;

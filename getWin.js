@@ -1,27 +1,28 @@
+import { OPTION_VALUE } from './constant.js'
 
-function getBalance(actualDeg, optionValue, jackpot)  {
+function getWin(actualDeg, jackpot)  {
   let win
     switch (true){
    case actualDeg <= 50 && actualDeg >= 5:
-     win = optionValue[7];
+     win = OPTION_VALUE[7];
      break;
    case actualDeg > 50 &&  actualDeg < 95:
-     win = optionValue[6];
+     win = OPTION_VALUE[6];
      break;
    case actualDeg >= 95 && actualDeg < 140:
-     win = optionValue[5];
+     win = OPTION_VALUE[5];
      break;
    case actualDeg >= 140 && actualDeg < 185:
-     win = optionValue[4];
+     win = OPTION_VALUE[4];
      break;
    case actualDeg >= 185 && actualDeg < 230:
-     win = optionValue[3];
+     win = OPTION_VALUE[3];
      break;
    case actualDeg >= 230 && actualDeg < 275:
-     win = optionValue[2];
+     win = OPTION_VALUE[2];
      break;
    case actualDeg >= 275 && actualDeg < 320:
-     win = optionValue[1];
+     win = OPTION_VALUE[1];
      break;
    default:
      win = 1000
@@ -36,4 +37,4 @@ function getBalance(actualDeg, optionValue, jackpot)  {
 return win
 }
 
-export {getBalance};
+export {getWin};

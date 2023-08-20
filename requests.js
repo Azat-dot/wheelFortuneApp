@@ -1,4 +1,4 @@
-import { winnersNumber, URL } from './constant.js';
+import { WINNERS_NUMBERS, URL } from './constant.js';
 
 let userTest = {
   name: "",
@@ -8,7 +8,7 @@ let userTest = {
 };
 
 let players = await getUsers();
-let winners = topPlayers(players, winnersNumber);
+let winners = topPlayers(players, WINNERS_NUMBERS);
 
 
   
@@ -28,12 +28,11 @@ async function getUsers() {
   return response.json();
 }
 
-function topPlayers(players, winnersNumber ) {
+function topPlayers(players, winnersNumbers) {
   players.sort( (a, b) => b.balance - a.balance )
 
-   return players.slice(0, winnersNumber)
+   return players.slice(0, winnersNumbers)
 }
-
 
 
 export {postUser, userTest, winners}

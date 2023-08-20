@@ -1,7 +1,11 @@
 import { postUser, userTest, winners } from './requests.js'
 import { User } from './user.js'
+import { getWin } from './getWin.js'
+import {COST} from './constant.js'
 
 let user;
+let deg = 0;
+
 
 function renderCard (winners) {
 
@@ -26,11 +30,6 @@ function renderWinners(winners) {
   })
 }
 
-renderWinners(winners)
-
-
-
-let deg = 0;
 function appearBackWindow(backWindow) {
     setTimeout(()=>backWindow.style.display = 'block', 1500);
   }
@@ -41,7 +40,7 @@ function disappearBackWindow(greatButton, backWindow) {
     })
 }
 
-function rotateWheel(startButton, wheel, appearBackWindow, backWindow, backTextWrapper) {
+function rotateWheel(startButton, wheel, backWindow, backTextWrapper) {
   
     startButton.addEventListener('click', () => {
       startButton.style.pointerEvents = 'none';
@@ -49,60 +48,65 @@ function rotateWheel(startButton, wheel, appearBackWindow, backWindow, backTextW
       wheel.style.transition = `all 1s ease-out`;
       wheel.style.transform = `rotate(${deg}deg)`;
       wheel.classList.add('blur');
-  
-
       
       appearBackWindow(backWindow);
       appearBackWindow(backTextWrapper);
       
     });
   }
-  
-function getTransitionAndInfo(wheel, startButton, disappearBackWindow, greatButton, backWindow, backTextWrapper, balance, getBalance, actualDeg,  optionValue, jackpot, backTextWindowBalance, moneyTotal) {
-      wheel.addEventListener('transitionend', () => {
+
+function updateStylesOnWheelStop(wheel, startButton, actualDeg) {
+
       wheel.classList.remove('blur');
       startButton.style.pointerEvents = 'auto';
       wheel.style.transition = 'none';
+      wheel.style.transform = `rotate(${actualDeg}deg)`;
 
+  }
+  
+function getTransitionAndInfo(wheel, startButton, greatButton, backWindow, backTextWrapper, balance, jackpot, backTextWindowBalance) {
+      wheel.addEventListener('transitionend', () => {
+      
+      let actualDeg = deg % 360;
+      let win = getWin(actualDeg, jackpot)
 
-      actualDeg = deg % 360;
-        let balance_number = balance.innerText.match(/\d{1,}/);// куда надо отправить
+      updateUserBalance(win - COST);
+      balance.innerHTML = "BALANCE <br> " + user.balance
+      backTextWindowBalance.innerHTML =  win
 
-        let win = getBalance(actualDeg, optionValue, jackpot) // текуший выйгрыш
-        backTextWindowBalance.innerHTML =  win
-        balance_number = +balance_number + win - 50;
+      updateStylesOnWheelStop(wheel, startButton, actualDeg);
 
-        balance.innerHTML = "BALANCE <br> " + balance_number// отправка баланса
-
-        moneyTotal.innerHTML = balance_number
-        
-        user.balance += balance_number // итоговый баланс
-   
       disappearBackWindow(greatButton, backWindow)
       disappearBackWindow(greatButton, backTextWrapper)
   
-      wheel.style.transform = `rotate(${actualDeg}deg)`;
-
     });
+  }
+
+  function updateUserBalance (sumBalance) {
+
+    user.balance += sumBalance
   }
 
 
 function getUserDate() {
+  console.log("userDate");
     let userName = prompt("Please, type your name ?", "");
     let surname = prompt("Please, type your surname ?", "");
     
     user = new User(userName, surname)
+    
 
 }
 
 window.addEventListener("load", async function()  {
 
-    getUserDate()
+   console.log("load"); 
+   getUserDate()
 })
 
-// postUser(user.balance = balance_number, user.name = userName, user.surname = surname)
+// postUser(user.balance, user.name = userName, user.surname = surname)
 
-
-
+//todo:
+// renderWinners(winners)
 
   export {rotateWheel, getTransitionAndInfo, appearBackWindow, disappearBackWindow, renderWinners};
