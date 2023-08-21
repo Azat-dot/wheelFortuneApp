@@ -1,7 +1,7 @@
-import { postUser, userTest, winners } from './requests.js'
+import { postUser} from './requests.js'
 import { User } from './user.js'
 import { getWin } from './getWin.js'
-import {COST} from './constant.js'
+import { COST } from './constant.js'
 
 let user;
 let deg = 0;
@@ -74,6 +74,8 @@ function getTransitionAndInfo(wheel, startButton, greatButton, backWindow, backT
       balance.innerHTML = "BALANCE <br> " + user.balance
       backTextWindowBalance.innerHTML =  win
 
+    
+
       updateStylesOnWheelStop(wheel, startButton, actualDeg);
 
       disappearBackWindow(greatButton, backWindow)
@@ -82,29 +84,37 @@ function getTransitionAndInfo(wheel, startButton, greatButton, backWindow, backT
     });
   }
 
-  function updateUserBalance (sumBalance) {
-
+function updateUserBalance (sumBalance) {
     user.balance += sumBalance
-  }
+
+}
 
 
 function getUserDate() {
-  console.log("userDate");
     let userName = prompt("Please, type your name ?", "");
     let surname = prompt("Please, type your surname ?", "");
     
     user = new User(userName, surname)
-    
 
 }
 
-window.addEventListener("load", async function()  {
 
-   console.log("load"); 
+window.addEventListener("load", async function()  {
    getUserDate()
+
 })
 
-// postUser(user.balance, user.name = userName, user.surname = surname)
+
+window.addEventListener('beforeunload', function() {
+  console.log("unload");
+
+  postUser(user.name, user.surname, user.balance)
+  console.log("unload");
+  
+  preventDefault()
+
+})
+
 
 //todo:
 // renderWinners(winners)

@@ -1,19 +1,13 @@
 import { WINNERS_NUMBERS, URL } from './constant.js';
 
-let userTest = {
-  name: "",
-  surname: "",
-  balance: 0,
-  photoURL: "https://i.pravatar.cc/300"
-};
 
 let players = await getUsers();
 let winners = topPlayers(players, WINNERS_NUMBERS);
 
 
   
-async function postUser() {
-  let response = await fetch(URL, {
+function postUser() {
+  fetch(URL, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json;charset=utf-8'
@@ -35,4 +29,4 @@ function topPlayers(players, winnersNumbers) {
 }
 
 
-export {postUser, userTest, winners}
+export {postUser, winners}
