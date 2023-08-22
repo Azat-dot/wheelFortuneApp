@@ -1,8 +1,24 @@
 # wheel of fortune
 
-After pushing button Spin wheel, your balance will became -50 plus whatever you win. 
+for lunching: 
+1. open with liveserver
+2. in terminal type: json-server db.json
 
-During many spins, in winners infor, you can see names of 5 top players by their budget. 
+
+How the game is working: 
+
+Type name and surname and push button "Spin wheel".
+
+By pushing button Spin wheel, balance will became -50 plus whatever is current win. 
+
+When circle stops, the window will appear, where will be the win money. 
+
+By pushing "Great" totall "Balance" will update.
+
+During many spins, in "Winners" list,  names of 4 top players will appear by their budgets. 
+
+To finish the game, need to leave or apdate window. 
+
 
 Thechnoloies used in this project: 
 
