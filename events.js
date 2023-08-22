@@ -99,24 +99,15 @@ function getUserDate() {
 }
 
 
-window.addEventListener("load", async function()  {
-   getUserDate()
-
-})
 
 
-window.addEventListener('beforeunload', function() {
-  console.log("unload");
 
+window.addEventListener('beforeunload', (event) => {
+  console.log('beforeunload');
   postUser(user.name, user.surname, user.balance)
-  console.log("unload");
-  
-  preventDefault()
-
-})
+  // Cancel the event
+  event.preventDefault();
+});
 
 
-//todo:
-// renderWinners(winners)
-
-  export {rotateWheel, getTransitionAndInfo, appearBackWindow, disappearBackWindow, renderWinners};
+  export {rotateWheel, getTransitionAndInfo, appearBackWindow, disappearBackWindow, renderWinners, getUserDate};

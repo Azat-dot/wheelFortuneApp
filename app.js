@@ -1,4 +1,4 @@
-   import { rotateWheel, getTransitionAndInfo, renderWinners} from"./events.js"
+   import { rotateWheel, getTransitionAndInfo, renderWinners, getUserDate} from"./events.js"
    import { winners } from './requests.js'
 
 
@@ -19,6 +19,12 @@
     rotateWheel(startButton, wheel, backWindow, backTextWrapper)
     getTransitionAndInfo(wheel, startButton, greatButton, backWindow, backTextWrapper, balance, jackpot, backTextWindowBalance)
     renderWinners(winners)
+    window.addEventListener("load", async function()  { getUserDate()})
+    window.addEventListener('beforeunload', (event) => {
+            console.log('beforeunload');
+            postUser(user.name, user.surname, user.balance)
+            event.preventDefault();
+    });
     
 
 
