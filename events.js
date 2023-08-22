@@ -99,15 +99,4 @@ function getUserDate() {
 }
 
 
-
-
-
-window.addEventListener('beforeunload', (event) => {
-  console.log('beforeunload');
-  postUser(user.name, user.surname, user.balance)
-  // Cancel the event
-  event.preventDefault();
-});
-
-
   export {rotateWheel, getTransitionAndInfo, appearBackWindow, disappearBackWindow, renderWinners, getUserDate};
