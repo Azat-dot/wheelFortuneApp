@@ -9,4 +9,14 @@ export class User {
     get photoURL() {
         return "https://i.pravatar.cc/300";
       }
+
+      toJSON() {
+        return {
+          name: this.name,
+          surname: this.surname,
+          balance: this.balance,
+          photoURL: this.photoURL
+        }}
+
+
 }

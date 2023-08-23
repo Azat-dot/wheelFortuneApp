@@ -86,7 +86,6 @@ function getTransitionAndInfo(wheel, startButton, greatButton, backWindow, backT
 
 function updateUserBalance (sumBalance) {
     user.balance += sumBalance
-
 }
 
 
@@ -96,7 +95,19 @@ function getUserDate() {
     
     user = new User(userName, surname)
 
+
 }
+
+window.addEventListener('beforeunload', (event) => {
+   postUser(user)
+
+
+
+  // event.preventDefault();
+  // return (event.returnValue = "");
+});
+
+
 
 
   export {rotateWheel, getTransitionAndInfo, appearBackWindow, disappearBackWindow, renderWinners, getUserDate};

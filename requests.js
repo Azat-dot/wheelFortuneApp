@@ -6,16 +6,18 @@ let winners = topPlayers(players, WINNERS_NUMBERS);
 
 
   
-function postUser() {
-  fetch(URL, {
+function postUser(user) {
+  let data = JSON.stringify(user)
+  return fetch(URL, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json;charset=utf-8'
     },
-    body: JSON.stringify(user)
+    body: data
   });
   
 }
+
 
 async function getUsers() {
   let response = await fetch(URL)
