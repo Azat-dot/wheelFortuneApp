@@ -1,6 +1,6 @@
-# wheel of fortune
+# Wheel of fortune
 
-## for lunching: 
+## For lunching: 
 - open with liveserver
 - in terminal type: json-server db.json
 
@@ -9,18 +9,18 @@
 
 - Type name and surname and push button "Spin wheel".
 
-- By pushing button Spin wheel, balance will became -50 plus whatever is current win. 
+- By pushing button Spin wheel, balance will become -50 plus whatever is current win. 
 
-- When circle stops, the window will appear, where will be the win money. 
+- When circle stops, the window will appear, it will be the win money. 
 
-- By pushing "Great" totall "Balance" will update.
+- By pushing "Great" total "Balance" will update.
 
 - During many spins, in "Winners" list,  names of 4 top players will appear by their budgets. 
 
-- To finish the game, need to leave or apdate window. 
+- To finish the game, need to leave or update window. 
 
 
-## Thechnoloies used in this project: 
+## Technologies used in this project: 
 
 - js, 
 
